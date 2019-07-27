@@ -379,12 +379,12 @@ namespace Test.TwentySevenQ.NUnit.WebApi.Extension
     }
 
     internal static class StatusCodeTestHelper{
-        public static void Is(this StatusCodeResult act, Func<IResolveConstraint> test) {
-            Assert.That<StatusCodeResult>(act, test());
+        public static void Is(this StatusCodeResult act, Func<IResolveConstraint> constraint) {
+            Assert.That(act, constraint());
         }
 
-        public static void Is(this ActionResult act, Func<IResolveConstraint> test) {
-            Assert.That(act, test());
+        public static void Is(this ActionResult act, Func<IResolveConstraint> constraint) {
+            Assert.That(act, constraint());
         }
         
     }
